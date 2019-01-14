@@ -7,6 +7,8 @@
   <div class="alert alert-success"><%= flash[:notice] %></div>
 <% end %>
 
+
+<%= react_component 'UserTable', people: @people.to_json %>
 <%= react_component 'GreetUser', name: 'Berek' %>
 
 <table class="table table-bordered table-striped">

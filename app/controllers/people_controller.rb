@@ -24,7 +24,7 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
 
     if @person.update_attributes(person_params)
-      redirect_to people_path, notice: "#{first_name} #{last_name} has been updated!" and return
+      redirect_to people_path, notice: "#{@person.first_name} #{@person.last_name} has been updated!" and return
     end
 
     render 'edit'
@@ -34,7 +34,7 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
     @person.destroy
 
-    redirect_to people_path, notice: "#{first_name} #{last_name} has been deleted!" and return
+    redirect_to people_path, notice: "#{@person.first_name} #{@person.last_name} has been deleted!" and return
   end
 private
   def person_params
